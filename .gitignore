@@ -1,0 +1,11 @@
+# Bash
+.env
+*.env.*
+
+# OS X
+.DS_Store
+
+# Python
+*.pyc
+.venv/
+.pytest_cache
