@@ -1,0 +1,55 @@
+Smoke Test Plan,Test Name,Prerequesites,Test Steps ,Expected Results
+1,Create new space,1.User logged in to Posit Cloud,"1. Click the ""New Space"" button on the left side menu
+2. Enter a space name in the input field
+3. Click the ""Create"" button",New space modal should load and allow user to input a name and create a new space. The new space should appear in the space menu on the left hand side
+2,Create new project,1.User logged in to Posit Cloud,"1. Click the ""New Project"" Button
+2. Select ""New RStudio Project""
+3. Wait for IDE to load","User should be able to start a new RStudio Project. The IDE should load and the console, workbench files, and workbench environment should all be visible."
+3,Move project to archive,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to Your Content inside Your Workspace
+2. Click the ""More Actions"" button on the right side menu of the project
+3. Click Move to Archive
+4. On the left menu click the Archive link and verify the project was moved to the archive","The user should be able to move the project to the archive. The project should no longer appear in ""Your Content"" and should now appear in the archive"
+4,Restore project from archive,"1. User logged in to Posit Cloud
+2. An existing project in the archive","1. Navigate to the archive
+2. Click the ""Restore"" button for the archived project.
+3. Verify the archive is now empty
+4. Navigate to ""Your Content"" and verify the project has been restored","The user should be able to restore an archived project. The project should no longer be displayed in the archive and should now be displayed in ""Your Content"""
+5,Edit Project details,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to ""Your Content"" inside your workspace
+2. Click ""More Actions"" button on the right side menu of the project
+3. Click ""Settings""
+4. Edit the name and description of the project
+5. Close the settings modal
+6. Verify the name and description of the project have been changed",The user should be able to edit the name and description of the project
+6,Share Link,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to ""Your Content"" inside your workspace
+2. Click ""More Actions"" button on the right side menu of the project
+3. Click ""Share Link"" and verify there is a warning that it cannot be shared.
+4. Edit the access for the project so it can be viewed by everyone
+5. Try ""Share Link"" again and verify that modal appears to share link by email",User should only be able to share link for a project that can be viewed by all cloud users.
+7,Export Project,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to ""Your Content"" inside your workspace
+2. Click the ""Export"" button for the project
+3. When the export is complete click the download button",User should be able to export a project. Once export is complete the user should be able to download the project to their local machine.
+8,Delete Project,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to ""Your Content"" inside your workspace
+2. Click the ""Move to Trash"" button for the project
+3. Verify the project is no longer displayed in ""Your Content""
+4. Navigate to the trash and verify the project is displayed there",User should be able to move a project to the trash
+9,Restore project from trash,"1. User logged in to Posit Cloud
+2. An existing project in the trash","1. Navigate to the trash
+2. Click the ""Restore"" button for the project.
+3. Verify the trash is now empty
+4. Navigate to ""Your Content"" and verify the project has been restored","The user should be able to restore a project from the trash. The project should no longer be displayed in the trash and should now be displayed in ""Your Content"""
+10,Empty trash,"1. User logged in to Posit Cloud
+2. An existing project","1. Navigate to ""Your Content"" inside your workspace
+2. Click the ""Move to Trash"" button for the project
+3. Verify the project is no longer displayed in ""Your Content""
+4. Navigate to the trash and verify the project is displayed there
+5. Click the ""Empty Trash"" button",The user should be able to move a project to the trash and empty the trash. The project should no longer be available anywhere inside Posit Cloud.
+11,Delete Space,"1. User logged in to Posit Cloud
+2. A user created workspace","1. Navigate to the workspace.
+2. Click the ""Move to Trash"" button for the workspace.
+3. Verify the space is no longer displayed in the space menu
+4. Navigate to the trash and verify the space is displayed there,",The user should be able to delete a space.

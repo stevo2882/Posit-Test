@@ -22,4 +22,8 @@ Serve the allure report locally with the following command
 
 `allure serve allure_report`
 
+To view the smoke test plan start the Shiny app with the following command
+
+`shiny run smoke_test/app.py`
+
 
