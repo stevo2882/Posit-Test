@@ -12,6 +12,7 @@ class BasePage:
     NEW_PROJECT_BTN = (By.CSS_SELECTOR, ".action.menuDropDown")
     NEW_RSTUDIO_BTN = (By.CSS_SELECTOR, ".action.newRStudioProject")
     GEN_MESSAGE = (By.CSS_SELECTOR, ".genMessage")
+    MENU_TOGGLER = (By.CSS_SELECTOR, ".action.first.navMenuToggler")
 
     def __init__(self, driver):
         """ "Initialize BasePage.
@@ -23,11 +24,13 @@ class BasePage:
 
     def create_new_space(self):
         """Click the new space button."""
+        self.expand_nav_panel()
         self.wait.until(ec.presence_of_element_located(self.NEW_SPACE_BTN)).click()
         return NewSpaceModal(self.driver)
 
     def get_spaces(self):
         """Return a list of the space names from the nav menu."""
+        self.expand_nav_panel()
         return self.wait.until(ec.presence_of_element_located(self.SPACE_MENU)).text.splitlines()
 
     def create_new_rstudio_project(self):
@@ -35,6 +38,12 @@ class BasePage:
         self.wait.until(ec.presence_of_element_located(self.NEW_PROJECT_BTN)).click()
         self.wait.until(ec.presence_of_element_located(self.NEW_RSTUDIO_BTN)).click()
         return IDEPage(self.driver)
+
+    def expand_nav_panel(self):
+        """Expand the nav panel if it is collapsed."""
+        element = self.wait.until(ec.presence_of_element_located(self.SPACE_MENU))
+        if not element.is_displayed():
+            self.wait.until(ec.presence_of_element_located(self.MENU_TOGGLER)).click()
 
 
 class NewSpaceModal(BasePage):
