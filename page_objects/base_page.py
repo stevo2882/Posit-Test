@@ -13,6 +13,7 @@ class BasePage:
     NEW_RSTUDIO_BTN = (By.CSS_SELECTOR, ".action.newRStudioProject")
     GEN_MESSAGE = (By.CSS_SELECTOR, ".genMessage")
     MENU_TOGGLER = (By.CSS_SELECTOR, ".action.first.navMenuToggler")
+    SPACE_NAME_OWNER = (By.CSS_SELECTOR, ".spaceNameWithOwner")
 
     def __init__(self, driver):
         """ "Initialize BasePage.
@@ -59,3 +60,4 @@ class NewSpaceModal(BasePage):
     def click_create_button(self):
         """Click the create button."""
         self.wait.until(ec.presence_of_element_located(self.CREATE_BTN)).click()
+        self.wait.until(ec.presence_of_element_located(self.SPACE_NAME_OWNER))
